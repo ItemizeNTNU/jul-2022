@@ -38,7 +38,7 @@ main::before {
 	z-index: 1;
 }
 main > div {
-	background: rgba(64, 31, 31, 0.47);
+	background: rgba(31, 64, 45, 0.57);
 	box-shadow: 0 8px 20px 0 rgba(201, 201, 201, 0.1);
 	backdrop-filter: blur(2px);
 	-webkit-backdrop-filter: blur(2px);
@@ -77,7 +77,7 @@ input[type="submit"],
 .btn {
 	display: block;
 	padding: 10px 30px;
-	background-color: #8e6060;
+	background-color: #6c8e60;
 	color: #fff;
 	font-weight: bold;
 	border-radius: 5px;
@@ -91,11 +91,11 @@ input[type="submit"],
 }
 input[type="submit"]:hover,
 .btn:hover {
-	background-color: #ad6868;
+	background-color: #68ad70;
 }
 input[type="submit"]:focus,
 .btn:focus {
-	background-color: #865454;
+	background-color: #648654;
 }
 .panel {
 	display: flex;

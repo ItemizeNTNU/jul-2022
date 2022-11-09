@@ -2,8 +2,10 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
+import jwt from "jsonwebtoken";
 
 const FLAG = process.env.FLAG ?? "Itemize{dummy_flag}";
+const KEY = "#¤&¤%eghjifghj3i4jt03jgr33ggggsdW#T##T%SDSGØÆØOPLUÅØHMGb"
 
 const app = express();
 app.use(cors());
@@ -18,16 +20,17 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 // Helper functions
-const parseAuth = (req, res) => {
-	const { auth: authCookie } = req.cookies;
+const parseSession = (req, res) => {
+	const { session: token } = req.cookies;
 	try {
-		JSON.parse(atob(authCookie));
+		jwt.verify(token, KEY)
 	} catch (error) {
-		res.cookie("auth", "", { expires: new Date(0) });
+		res.cookie("session", "", { expires: new Date(0) });
 		return res.redirect("/");
 	}
-	const auth = JSON.parse(atob(authCookie));
-	return { admin: Boolean(auth?.admin), username: String(auth?.user) };
+	const session = jwt.decode(token)
+    console.log(session)
+	return { name: String(session?.name), status: String(session?.status) };
 };
 
 // Begin routes
@@ -39,13 +42,16 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
 	const { name } = req.body;
+    console.log(name)
 	if (!name) return res.render("index", { error: "Missing field name" });
+    const token = jwt.sign({ name: name, status: "waiting" }, KEY);
+    res.cookie("session", token);
     res.redirect("/dashboard");
 });
 
 app.get("/dashboard", (req, res) => {
-	const user = parseAuth(req, res);
-	res.render("dashboard", { user, flag });
+	const user = parseSession(req, res);
+	res.render("dashboard", { user });
 });
 
 const port = process.env.PORT || 8080;

@@ -6,19 +6,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Oreo | dashboard</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
-		<script src="main.js"></script>
 	</head>
 	<body>
 		<main>
 			<div class="panel">
-				<% if (user.admin) { %>
-				<p class="error"><b>Welcome back, admin!</b><br/><br/><%= flag %><br/><br/></p>
-				<% } else { %>
-				<p class="error"><b>Warning:</b> admin value set on cookie 'auth' is 'false'. </br> User does not have
-          permission to access the dashboard.<br/><br/></p>
-				<% } %>
-
-				<a href="/logout" class="btn">Logout</a>
 			</div>
 		</main>
 	</body>
