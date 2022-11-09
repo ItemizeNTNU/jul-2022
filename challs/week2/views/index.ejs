@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Oreo | login</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="main.js"></script>
+	</head>
+	<body>
+		<main>
+			<div class="panel">
+				<div>
+					<h3>Santa's secret giftlist 2022 🎁🎅</h3>
+					<p>Super secret only for Santa's Elves!!</p>
+				</div>
+				<form action="/" method="post">
+					<label
+						>Name <input type="text" name="name" id="name"
+					/></label>
+					<input type="submit" value="Login" />
+				</form>
+				<% if (error) { %>
+				<p class="error"><%= error %></p>
+				<% } %>
+			</div>
+		</main>
+	</body>
+</html>

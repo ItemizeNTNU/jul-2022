@@ -1,0 +1,119 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html,
+body {
+	display: block;
+	margin: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	background: url("/background.jpeg");
+	background-size: cover;
+	background-position: center;
+	color: #dcdcdc;
+	overflow: hidden;
+}
+h3 {
+	color: rgba(255, 255, 255, 1);
+}
+main {
+	margin: 0 auto;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(10px + 2vmin);
+	text-align: center;
+}
+main::before {
+	content: "";
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	background-color: rgba(17, 36, 45, 0.4);
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+main > div {
+	background: rgba(64, 31, 31, 0.47);
+	box-shadow: 0 8px 20px 0 rgba(201, 201, 201, 0.1);
+	backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: blur(2px);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	padding: 30px 60px;
+	border-radius: 12px;
+	z-index: 2;
+}
+form {
+	display: flex;
+	flex-direction: column;
+}
+form > label {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	font-size: 1rem;
+}
+form input {
+	border-radius: 4px;
+	padding: 8px;
+	margin: 8px 0;
+	border: none;
+}
+form p {
+	color: #010101;
+	background-color: rgba(255, 255, 255, 0.5);
+	font-size: 1rem;
+	padding: 10px;
+}
+form p:first-of-type {
+	font-size: 1.5rem;
+}
+input[type="submit"],
+.btn {
+	display: block;
+	padding: 10px 30px;
+	background-color: #8e6060;
+	color: #fff;
+	font-weight: bold;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 0px 0px 10px rgba(17, 36, 45, 0.6);
+	width: 420px;
+	max-width: 100%;
+	margin: 12px auto;
+	font-size: 1rem;
+	transition: background-color 0.2s;
+}
+input[type="submit"]:hover,
+.btn:hover {
+	background-color: #ad6868;
+}
+input[type="submit"]:focus,
+.btn:focus {
+	background-color: #865454;
+}
+.panel {
+	display: flex;
+	flex-direction: column;
+}
+.panel > div {
+	display: flex;
+	flex-direction: column;
+	padding: 12px;
+}
+.panel > div > p {
+	font-size: 1rem;
+	padding-top: 12px;
+}
+.error {
+	font-size: 1rem;
+	margin-top: 24px;
+}
+a.btn {
+	text-decoration: none;
+}
