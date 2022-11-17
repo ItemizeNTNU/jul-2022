@@ -1,0 +1,16 @@
+{
+    "good": [
+        "Susie",
+        "John",
+        "Tommy",
+        "Ellen"
+    ],
+    "bad": [
+        "Bob",
+        "Mary",
+        "Jack"
+    ],
+    "waiting": [
+
+    ]
+}

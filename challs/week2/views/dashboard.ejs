@@ -9,7 +9,25 @@
 	</head>
 	<body>
 		<main>
-			<div class="panel">
+			<div class="giftlist">
+				<div>
+					<span class="gift-head">👼</span>
+					<% for (let i=0; i < giftlist["good"].length; i++) { %>
+						<span><%= giftlist["good"][i]%></span>
+					<% } %>
+				</div>
+				<div>
+					<span class="gift-head">👿</span>
+					<% for (let i=0; i < giftlist["bad"].length; i++) { %>
+						<span><%= giftlist["bad"][i]%></span>
+					<% } %>
+				</div>
+				<div>
+					<span class="gift-head">Waiting ⏳</span>
+					<% for (let i=0; i < giftlist["waiting"].length; i++) { %>
+						<span><%= giftlist["waiting"][i]%></span>
+					<% } %>
+				</div>
 			</div>
 		</main>
 	</body>

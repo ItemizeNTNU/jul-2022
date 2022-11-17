@@ -3,6 +3,7 @@ import cors from "cors";
 import cookieParser from "cookie-parser";
 import bodyParser from "body-parser";
 import jwt from "jsonwebtoken";
+import giftlist from './list.json';
 
 const FLAG = process.env.FLAG ?? "Itemize{dummy_flag}";
 const KEY = "#¤&¤%eghjifghj3i4jt03jgr33ggggsdW#T##T%SDSGØÆØOPLUÅØHMGb"
@@ -33,6 +34,10 @@ const parseSession = (req, res) => {
 	return { name: String(session?.name), status: String(session?.status) };
 };
 
+const childEnlisted = (name) => {
+	if (giftlist["good"].concat(giftlist["bad"]).concat(giftlist["waiting"]).includes(name)) return true
+}
+
 // Begin routes
 app.get("/", (req, res) => {
 	const { session } = req.cookies;
@@ -42,8 +47,8 @@ app.get("/", (req, res) => {
 
 app.post("/", (req, res) => {
 	const { name } = req.body;
-    console.log(name)
 	if (!name) return res.render("index", { error: "Missing field name" });
+	if (childEnlisted(name)) return res.render("index", { error: "Child allready enlisted" });
     const token = jwt.sign({ name: name, status: "waiting" }, KEY);
     res.cookie("session", token);
     res.redirect("/dashboard");
@@ -51,7 +56,13 @@ app.post("/", (req, res) => {
 
 app.get("/dashboard", (req, res) => {
 	const user = parseSession(req, res);
-	res.render("dashboard", { user });
+	if (!giftlist[user["status"]].includes(user["name"])) {
+		giftlist[user["status"]].push(user["name"])  // add user to list based on status in cookie
+	}
+	if(giftlist["good"].includes(user["name"])) {
+		giftlist["good"].push(FLAG) // add *GIFT* if user is in good list
+	}
+	res.render("dashboard", { giftlist });
 });
 
 const port = process.env.PORT || 8080;

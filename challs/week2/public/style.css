@@ -117,3 +117,26 @@ input[type="submit"]:focus,
 a.btn {
 	text-decoration: none;
 }
+.giftlist {
+	display: flex;
+	flex-direction: row;
+	width: 50%;
+
+}
+.giftlist > div {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: 0 5px;
+
+}
+.giftlist > div > span {
+	height: 4rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.gift-head {
+	background-color: #68ad70;
+	border-radius: 12px;
+}
