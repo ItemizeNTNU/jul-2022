@@ -1,6 +1,7 @@
-# Week 1
+# Week 1 - normal challenge
 
 ### Description
+Hint: Alvene bruker nordisk tastatur!
 ...
 
 ### Category
@@ -29,3 +30,26 @@ Det skal vi s;⌫elvf;lgelig s;rge fo⌫⌫⌫⌫ for.
 Fikk akkuratt beskjed av kartavlene at rune⌫⌫ten er kalkulert, og f;rste sted duskal levere gaver til er Itemize&Berlev[g)
 Avreise er 23. desember kl 23>49⌫⌫59.
 ```
+
+Flag: `Itemize{Berlevåg}`
+Verify hash: `251be01c698ed71a454da814ea180895`
+
+
+# Week 1 - easy challenge
+
+### Description
+Hei!
+Du skal hjelpe sende eller levere et brev til Julenissen, men har rotet bort adressen.
+Alvene har klart å finne noen ord som kanskje kan være til hjelp: luer.minsten.kledt
+
+### Category
+OSINT
+
+### Solution
+Use of what3words: https://what3words.com/luer.minsten.kledt
+
+`///luer.minsten.kledt`
+
+Flag: `Itemize{Havnebakken 6, 1440 Drøbak}`
+Flag format: `Itemize{StreetName StreetNumber, PostalCode PostalCodeLocation}` ie. the address of NTNU is `Høgskoleringen 1, 7034 Trondheim` then the flag would be `Itemize{Høgskoleringen 1, 7034 Trondheim}`
+Verify hash: `3e43a0f8e89866d5972673acd25289da`
