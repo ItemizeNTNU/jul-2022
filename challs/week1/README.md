@@ -2,24 +2,33 @@
 
 ### Description
 Hint: Alvene bruker nordisk tastatur!
+
 ...
 
 ### Category
 Forensics
 
 ### Setup
-1. Install wireshark with USBpcap. Rewrite the conversation while capturing the traffic on a notepad and save as a pcapng.
+1. Install wireshark with USBpcap.
 
-2. Convert `.pcapng` to `.pcap`, stripping unnecessary information.
+2. Rewrite the conversation from `conversation.md` on the elf's POV on a notepad while capturing the traffic and save it as a pcapng.
+
+3. Convert `.pcapng` to `.pcap`, stripping unnecessary information. `christmas.pcap` being the challenge file.
 ```
 $ tshark -F pcap -r christmas.pcapng -w christmas.pcap
 ```
 
 ### Solution
+
 ```
+$ # Retrieve usb input data and format it according to how it is going to be parsed
 $ tshark -r christmas.pcap -Y 'usb.capdata && usb.data_len == 8' -T fields -e usb.capdata | sed 's/../:&/g2' > keystrokes.txt
+
+$ # Clone repository for parsing these data
 $ git clone git@github.com:carlospolop-forks/ctf-usb-keyboard-parser.git
 $ cd ctf-usb-keyboard-parser/
+
+$ # Parse the usb keystrokes
 $ python3 usbkeyboard.py ../keystrokes.txt
 Hei juleen⌫⌫bn⌫⌫nissen!  F;lgende reinsdr⌫yr er klare til [rets tur>  Dasher, Dancer, Prac⌫ncer, Vixen, Comet, Cupid og Blitzen.
 If;lge veterin'ralven har Rudolf f[tt en skadet klov. Det⌫⌫et vil derfor v're vanskelig for han [ lande p[ alle takene under levering av gavene.
@@ -32,6 +41,7 @@ Avreise er 23. desember kl 23>49⌫⌫59.
 ```
 
 Flag: `Itemize{Berlevåg}`
+
 Verify hash: `251be01c698ed71a454da814ea180895`
 
 
@@ -51,5 +61,7 @@ Use of what3words: https://what3words.com/luer.minsten.kledt
 `///luer.minsten.kledt`
 
 Flag: `Itemize{Havnebakken 6, 1440 Drøbak}`
-Flag format: `Itemize{StreetName StreetNumber, PostalCode PostalCodeLocation}` ie. the address of NTNU is `Høgskoleringen 1, 7034 Trondheim` then the flag would be `Itemize{Høgskoleringen 1, 7034 Trondheim}`
+
+Flag format: `Itemize{StreetName StreetNumber, PostalCode PostalCodeLocation}` ie. if the address of NTNU is `Høgskoleringen 1, 7034 Trondheim` then the flag would be `Itemize{Høgskoleringen 1, 7034 Trondheim}`
+
 Verify hash: `3e43a0f8e89866d5972673acd25289da`
