@@ -47,7 +47,7 @@ Verify hash: `251be01c698ed71a454da814ea180895`
 
 # Week 1 - normal challenge fix
 
-Some high-IQ individual solved the challenge in an unintended way, a fix for the challenge was therefore added.
+Some high-IQ individual solved the challenge in an unintended way (by bruteforcing the given hash value), a fix for the challenge was therefore added.
 
 ### Solution
 ```
