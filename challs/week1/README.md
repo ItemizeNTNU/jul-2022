@@ -45,38 +45,6 @@ Flag: `Itemize{Berlevåg}`
 Verify hash: `251be01c698ed71a454da814ea180895`
 
 
-# Week 1 - normal challenge fix
-
-Some high-IQ individual solved the challenge in an unintended way, a fix for the challenge was therefore added.
-
-### Solution
-```
-$ # Retrieve usb input data and format it according to how it is going to be parsed
-$ tshark -r christmas.pcap -Y 'usb.capdata && usb.data_len == 8' -T fields -e usb.capdata | sed 's/../:&/g2' > keystrokes.txt
-
-$ # Clone repository for parsing these data
-$ git clone git@github.com:carlospolop-forks/ctf-usb-keyboard-parser.git
-$ cd ctf-usb-keyboard-parser/
-
-$ # Parse the usb keystrokes
-$ python3 usbkeyboard.py ../keystrokes.txt
-Hei jull⌫enissen! F;lgende reinsdyr e klare til [rets tur>  Dasher, Dancer, Prancer, Vixen, Comet, Cupid og Blitzen.
-Idf;⌫⌫⌫f;lge veterin'ralven har Rudolf f[tt et skadet klov. Det vil derfor v're vanskelig for han [ lande p[ alle takene under levering av gavene.
-Det skal jeg personlig s;rge o⌫for.
-Listen over de  ⌫10 f;rste sten⌫dene er som f;lger> Vads;, Hesseng, Vard;, Karasjok, Rypefjord, Berlev[g, Ksj⌫fjro⌫⌫⌫⌫⌫⌫:ksfjord, Nordv[genm⌫, Amtmannsnes og Lakselv. Jeeg⌫⌫g kommer tilbake til hvilket sted som er f;rst n[r kartavlene har f[tt kalkulert den beste ruten.
-Slemmebarn ll⌫isten best[r i [r av 20 barn. 5 barn er nye p[ listen mens de 15 siste er de samme som i fjor.
-Det skal vi selvf;lgelig s;'⌫rge for.
-Fikk akkurat beskjed av kartalvene at run⌫ten er kalkulert. F;rste sted du skal levere gaver til er Itemize&Berlev[g?Hohoho!!!)
-Avreise er 23. desember kl 23>59
-```
-
-Flag: `Itemize{Berlevåg_Hohoho!!!}`
-
-Flag format: `Itemize{Location_text}`
-
-Verify hash: `dc406ea31869d41cb322912a22cd2857`
-
-
 # Week 1 - easy challenge
 
 ### Description
