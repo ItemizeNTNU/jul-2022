@@ -1,6 +1,8 @@
 # Week 1 - normal challenge
 
 ### Description
+Itemize styret satt og planla juleavslutning når vi plutselig kom over noe spennende nettverkstrafikk. Etter litt nærmere undersøkelser viser det seg at det er en samtaleutveksling mellom julenissen og sjefs alven. Alt tyder på at det er snakk om en sted julenissen skal levere gaver til. Men akkurat når vi fant ut dette ble pizza levert og vi glemte helt hva vi drev med. Klarer du å finne ut hvilket sted julenissen og sjefs alven snakker om?
+
 Hint: Alvene bruker nordisk tastatur!
 
 ...
