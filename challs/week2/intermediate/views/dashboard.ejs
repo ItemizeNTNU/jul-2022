@@ -4,29 +4,48 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Oreo | dashboard</title>
+		<title>Santa's early christmas gift | only for the nice children</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
 		<main>
 			<div class="giftlist">
 				<div>
-					<span class="gift-head">👼</span>
-					<% for (let i=0; i < giftlist["good"].length; i++) { %>
-						<span><%= giftlist["good"][i]%></span>
-					<% } %>
+					<h2>
+						Hello,
+						<span title="<%= user.name%>"><%= user.displayName %></span>
+					</h2>
+					<p>
+						Your naughty or nice status for this year is currently: "<%=
+						user.status %>"
+					</p>
+					<p class="message"><%- user.message %></p>
 				</div>
-				<div>
-					<span class="gift-head">👿</span>
-					<% for (let i=0; i < giftlist["bad"].length; i++) { %>
-						<span><%= giftlist["bad"][i]%></span>
-					<% } %>
-				</div>
-				<div>
-					<span class="gift-head">Waiting ⏳</span>
-					<% for (let i=0; i < giftlist["waiting"].length; i++) { %>
-						<span><%= giftlist["waiting"][i]%></span>
-					<% } %>
+
+				<div class="list">
+					<div>
+						<h3>Naughty list 😈</h3>
+						<% for(let i=0; i < giftlist.length; i++) { %> <% if
+						(giftlist[i].status === "naughty") { %>
+						<div>
+							<p title="<%= giftlist[i].name%>">
+								<%= giftlist[i].displayName%> - ❌
+							</p>
+						</div>
+						<% } %> <% } %>
+					</div>
+
+					<div>
+						<h3>Nice list 👼</h3>
+						<% for(let i=0; i < giftlist.length; i++) { %> <% if
+						(giftlist[i].status === "nice") { %>
+						<div>
+							<p title="<%= giftlist[i].name%>">
+								<%= giftlist[i].displayName %> - 🎁
+							</p>
+						</div>
+						<% } %> <% } %>
+					</div>
 				</div>
 			</div>
 		</main>

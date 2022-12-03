@@ -32,12 +32,12 @@ main::before {
 	width: 100vw;
 	height: 100vh;
 	position: absolute;
-	background-color: rgba(17, 36, 45, 0.4);
+	background-color: rgba(17, 36, 45, 0.25);
 	top: 0;
 	left: 0;
 	z-index: 1;
 }
-main > div {
+main > div.panel {
 	background: rgba(31, 64, 45, 0.57);
 	box-shadow: 0 8px 20px 0 rgba(201, 201, 201, 0.1);
 	backdrop-filter: blur(2px);
@@ -117,26 +117,47 @@ input[type="submit"]:focus,
 a.btn {
 	text-decoration: none;
 }
-.giftlist {
-	display: flex;
-	flex-direction: row;
-	width: 50%;
 
-}
-.giftlist > div {
+.giftlist {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
-	margin: 0 5px;
-
+	max-width: 640px;
+	font-size: 16px;
+	color: #010101;
+	z-index: 100;
 }
-.giftlist > div > span {
-	height: 4rem;
+.giftlist h2 {
+	margin: 0.5rem;
+}
+.giftlist h3 {
+	color: #010101;
+}
+.giftlist .list {
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	justify-content: space-around;
+	gap: 2rem;
+	width: 100%;
+	margin: 1rem auto;
+	margin-top: 2rem;
+	text-align: left;
 }
-.gift-head {
-	background-color: #68ad70;
-	border-radius: 12px;
+.giftlist .list p {
+	position: relative;
+	padding-left: 12px;
+	margin: 5px;
+}
+.giftlist .list p::before {
+	content: "";
+	background-color: #010101;
+	width: 7px;
+	height: 7px;
+	border-radius: 50%;
+	top: 50%;
+	left: 0;
+	position: absolute;
+	transform: translateY(-55%);
+}
+.message {
+	margin-top: 0.5rem;
 }

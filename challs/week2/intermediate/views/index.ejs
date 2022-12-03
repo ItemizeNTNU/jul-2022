@@ -4,22 +4,28 @@
 		<meta charset="utf-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Oreo | login</title>
+		<title>Santa's early christmas gift | only for the nice children</title>
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
 		<main>
 			<div class="panel">
 				<div>
-					<h3>Santa's <br/>Good & Bad list 👼👿🎁</h3>
-					<p>Super secret only for Santa's Elves!!</p>
+					<h3>Santa's early gift 👼🎁</h3>
+					<p>An early christmas gift system for the nice children!</p>
 				</div>
+				<br />
 				<form action="/" method="post">
 					<label
-						>New child<input type="text" name="name" id="name"
+						>Check naughty or nice status<input
+							type="text"
+							name="name"
+							id="name"
+							placeholder="Firstname Lastname"
 					/></label>
 					<input type="submit" value="Enlist" />
 				</form>
+
 				<% if (error) { %>
 				<p class="error"><%= error %></p>
 				<% } %>
