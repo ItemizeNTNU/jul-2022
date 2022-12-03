@@ -1,0 +1,5 @@
+./intermediate/node_modules
+./intermediate/dist
+./intermediate/.gitignore
+./intermediate/.package-lock.json
+./intermediate/db.sqlite3
