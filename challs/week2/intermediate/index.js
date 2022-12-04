@@ -56,9 +56,9 @@ const parseSession = (req, res) => {
 		if (!data) throw new Error("Couldn't parse session data!");
 		if (!signature) throw new Error("Couldn't parse signature data!");
 		const name = atob(data);
-		if (atob(xor(signature, KEY)) === name)
+		if (atob(xor(signature, KEY)) !== name)
 			throw new Error(
-				"Session signature doesn't match the session data after XOR!"
+				"Session signature doesn't match the session data or name after XOR!"
 			);
 	} catch (error) {
 		if (String(error).includes("InvalidCharacterError"))
@@ -67,9 +67,10 @@ const parseSession = (req, res) => {
 		return res.redirect("/?error=" + error);
 	}
 
-	const [data, _signature] = token.split(".");
+	const [data, signature] = token.split(".");
 	const name = atob(data);
 	const child = giftlist.find((child) => child.name === name);
+	console.log(atob(xor(signature, KEY)));
 	return {
 		name: String(child?.name ?? name),
 		status: String(child?.status ?? "waiting"),
