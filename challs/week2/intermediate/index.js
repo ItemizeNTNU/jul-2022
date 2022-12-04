@@ -56,7 +56,8 @@ const parseSession = (req, res) => {
 		if (!data) throw new Error("Couldn't parse session data!");
 		if (!signature) throw new Error("Couldn't parse signature data!");
 		const name = atob(data);
-		if (atob(xor(signature, KEY)) !== name)
+		console.log(111, atob(xor(atob(signature), KEY)));
+		if (atob(xor(atob(signature), KEY)) !== name)
 			throw new Error(
 				"Session signature doesn't match the session data or name after XOR!"
 			);
@@ -70,7 +71,7 @@ const parseSession = (req, res) => {
 	const [data, signature] = token.split(".");
 	const name = atob(data);
 	const child = giftlist.find((child) => child.name === name);
-	console.log(atob(xor(signature, KEY)));
+	console.log(222, name);
 	return {
 		name: String(child?.name ?? name),
 		status: String(child?.status ?? "waiting"),
