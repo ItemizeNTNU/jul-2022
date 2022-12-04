@@ -14,13 +14,13 @@ Figure out the signature works by repeating XOR on name.
 
 Signature key is: `HoHoHo!!!`
 
-Break Signature by setying session name as `Haxorman L337` in cookie: `SGF4b3JtYW4gTDMzNw.GygOWypca1V4H1svOwwiW29WdVI`
+Break Signature by setying session name as `Haxorman L337` in cookie: `SGF4b3JtYW4gTDMzNw.AA4wADoCQE8BBFx7WA`
 
-Flag: `Itemize{l33t_gr1nch3n_3r_t1lb4k3}`
+Flag: `Itemize{l33t_gr1nch3n_3r_t1lb4k3_1gj3n}`
 
 Flag format: `Itemize{l33t_t3xt}`
 
-Verify hash: `e313a5841cc96f9e083d8ed549ca5f77`
+Verify hash: `39208c6c513d427fb8f8e14f612fbc2a`
 
 # Week 2 - easy challenge
 
