@@ -6,7 +6,7 @@ WORKDIR /app
 
 ENV PATH /app/node_modules/.bin:$PATH
 ENV PORT 8080
-ENV FLAG Itemize{INSERT_FLAG_HERE}
+ENV FLAG Itemize{l33t_gr1nch3n_3r_t1lb4k3}
 
 RUN npm install --silent
 
