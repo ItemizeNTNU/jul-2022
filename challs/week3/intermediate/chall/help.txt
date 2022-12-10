@@ -1,0 +1,19 @@
+                                                           
+   ____          __           __   _     __  ___  ___  ___  ___ 
+  / __/__ ____  / /____ ____ / /  (_)__ / /_/ _ \/ _ \/ _ \/ _ \
+ _\ \/ _ `/ _ \/ __/ _ `(_-</ /__/ (_-</ __/\_, / // / // / // /
+/___/\_,_/_//_/\__/\_,_/___/____/_/___/\__//___/\___/\___/\___/ 
+                                                                
+Dear elf, welcome to SantasList9000!
+This is a program that keeps track on all the nice children for Christmas.
+All nice children get presents.
+
+<!-- Please do not share to non-elves -->
+
+Commands:
+-----------
+- help()                  (print help screen)
+- show()                  (shows list of children)
+- update()                (update child information)
+- source()                (show program source)
+- exit()                  (exit program)

