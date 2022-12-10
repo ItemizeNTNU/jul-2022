@@ -4,9 +4,11 @@
 
 TBA
 
+`nc 129.241.150.119 34403`
+
 ### Category
 
-reverse/misc
+misc
 
 ### Solution
 
