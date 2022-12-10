@@ -1,0 +1,8 @@
+version: "3"
+services:
+  web:
+    build: .
+    ports:
+      - "34406:80"
+    restart: always
+    stop_signal: SIGKILL

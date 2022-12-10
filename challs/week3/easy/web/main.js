@@ -1,0 +1,65 @@
+function _0x2d2a(_0x36ccd9, _0x47949f) {
+	const _0x2d2a90 = _0x4794();
+	return (
+		(_0x2d2a = function (_0x31dfbb, _0x2aeb63) {
+			_0x31dfbb = _0x31dfbb - 0x10d;
+			let _0x3e6ae5 = _0x2d2a90[_0x31dfbb];
+			return _0x3e6ae5;
+		}),
+		_0x2d2a(_0x36ccd9, _0x47949f)
+	);
+}
+function _0x4794() {
+	const _0x580c89 = [
+		"open",
+		"getElementById",
+		"style",
+		"innerWidth",
+		"random",
+		"offsetWidth",
+		"aDA",
+		"click",
+		"top",
+		"repeat",
+		"resize",
+		".html",
+		"addEventListener",
+		"offsetHeight",
+		"btn",
+	];
+	_0x4794 = function () {
+		return _0x580c89;
+	};
+	return _0x4794();
+}
+const move = (_0x48aaab) => {
+	const _0x364983 = _0x2d2a;
+	(_0x48aaab[_0x364983(0x10f)][_0x364983(0x115)] =
+		Math[_0x364983(0x111)]() *
+			(window["innerHeight"] - _0x48aaab[_0x364983(0x11a)] + 0x5) +
+		"px"),
+		(_0x48aaab["style"]["left"] =
+			Math[_0x364983(0x111)]() *
+				(window[_0x364983(0x110)] - _0x48aaab[_0x364983(0x112)] + 0x5) +
+			"px");
+};
+(() => {
+	const _0x2a6876 = _0x2d2a,
+		_0x4fc606 = document[_0x2a6876(0x10e)](_0x2a6876(0x11b));
+	_0x4fc606[_0x2a6876(0x119)]("mouseover", function () {
+		move(this);
+	}),
+		_0x4fc606[_0x2a6876(0x119)](_0x2a6876(0x114), function () {
+			const _0x20bed7 = _0x2a6876;
+			move(this);
+			// TODO: make gift actually clickable 😹
+			if (false) {
+				window[_0x20bed7(0x10d)](
+					atob(_0x20bed7(0x113))[_0x20bed7(0x116)](0x3) + _0x20bed7(0x118)
+				);
+			}
+		}),
+		window[_0x2a6876(0x119)](_0x2a6876(0x117), () => {
+			move(_0x4fc606);
+		});
+})();
