@@ -18,7 +18,7 @@ h.2.#.k...............cdddddde.................6011111128....................6..
 .o..n..8pn555555m....lk...........np........6cdddddd4.....8.8iiiiia....nl.....6.
 m....p.85555555555555......mpn..npom.55555556biiiii#6..3dde.855555.....mo..h..6.
 112##..85555..555555555555555on.p55555555555cddd4h##6..8iia.85555555555555pn..6.
-..8##.n8pnk........55555555555555555555.....iiii6..hcdde.l..8h...55555555555556l
+..8##.n8pnk........55555555555555555555.....biii6..hcdde.l..8h...55555555555556l
 ..8#..p8m................np55555555pn...........cdd4biia3ddde............555556.
 .3e....8.................##no#....pm#...........bii6....8##ia.................6.
 .8ap...8.kl......k...l......#m...m.##....h.......l.6....8#h..........h........6.
@@ -45,7 +45,6 @@ export const parsePlayer = (data, id) => {
 	let verify = false,
 		x = 0,
 		y = 0;
-	console.log(data);
 	try {
 		data = data.match(/.{1,8}/g);
 		if (data[0] === id.substring(0, 8)) {
@@ -53,6 +52,8 @@ export const parsePlayer = (data, id) => {
 			y = parseInt(data[2], 16);
 			if (x >= 0 && x < MAP[0].length - 1 && y >= 0 && y < MAP.length - 1)
 				verify = true;
+			// .hklmn
+			if (!".hklmnbia".includes(MAP[y][x])) verify = false;
 		}
 	} catch (error) {
 		return { verify, x: 0, y: 0 };
@@ -83,13 +84,12 @@ export const mapEncode = (player) => {
 	// Clamp x and y direction
 	const x =
 		player.x >= MAP[0].length - n
-			? Math.min(Math.floor(player.x - n / 3), MAP[0].length - n)
-			: Math.max(Math.floor(player.x - n / 3), 0);
+			? Math.min(Math.floor(player.x - n / 2.5), MAP[0].length - n)
+			: Math.max(Math.floor(player.x - n / 2.5), 0);
 	const y =
 		player.y >= MAP.length - n
-			? Math.min(Math.floor(player.y - n / 3), MAP.length - n)
-			: Math.max(Math.floor(player.y - n / 3), 0);
-	console.log(x, y);
+			? Math.min(Math.floor(player.y - n / 2.5), MAP.length - n)
+			: Math.max(Math.floor(player.y - n / 2.5), 0);
 	for (let i = y; i < y + n; i++) {
 		const tiles = [];
 		for (let j = x; j < x + n; j++) {

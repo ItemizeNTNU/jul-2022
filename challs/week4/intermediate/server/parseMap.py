@@ -1,5 +1,5 @@
 import json
-with open("map.json") as f:
+with open("test.json") as f:
     a = f.read()
 a = json.loads(a)
 layers = a["layers"][0]
@@ -38,7 +38,7 @@ rep = {
 83:"p",
 92:"#"} # Crate
 for i in range(len(data)):
-    m[i//column][i%column] = rep[data[i]]
+    m[i//column][i%column] = rep.get(data[i], "?")
     a.add(data[i])
 
 #print(m, a)

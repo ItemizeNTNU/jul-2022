@@ -2,7 +2,11 @@
 
 ### Description
 
-TBA
+Nå er det snart jul! Alvene har utviklet seg et online spill hvor man sammen kan feire julen digitalt.
+Spillet er fortsatt under utvikling og alvene gjør sitt beste på å fullføre spillet til julaften. Heldigvis, har alvene vært så snille og gitt oss en demo versjon av spillet så vi får prøvet ut spillet først. Det har blitt sagt at alvene har gjemt en overraskelse et sted over elven i spillet, se om du klarer å finne det.
+
+Prøv ut spillet her:
+https://christmasrpg.ctf.itemize.no/
 
 ### Category
 
@@ -10,7 +14,13 @@ web
 
 ### Solution
 
-TBA
+- Websocket data manipulation with burp, change y-coordinate to walk over the river for flag.
+
+Flag: `Itemize{l33t_h4x0r}`
+
+Flag format: `Itemize{l33t_t3xt}`
+
+Verify hash: `85991f9d0255330b63ad69b724cec90a`
 
 # Week 4 - easy challenge
 
@@ -25,6 +35,7 @@ Klarer du å løse opp i rotet og sende inn ønskelisten din?
 Oppgave:
 
 ```
+-.-. -.-- .-. -. ..-. .-.
 --.. -. ...- -.--
 .-.. -... .... .
 .--- ...- ..-. ..- -.-- ...- ..-. --.

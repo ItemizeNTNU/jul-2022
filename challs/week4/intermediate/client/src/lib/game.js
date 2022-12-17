@@ -16,6 +16,8 @@ export default class Game {
 	init(canvas) {
 		this.canvas = canvas;
 		this.ctx = canvas.getContext("2d");
+		this.ctx.webkitImageSmoothingEnabled = false;
+		this.ctx.imageSmoothingEnabled = false;
 		this.width = canvas.width;
 		this.height = canvas.height;
 	}
@@ -40,8 +42,14 @@ export default class Game {
 			tile.draw(this.ctx);
 		}
 		const offset = {
-			x: Math.max(-Math.max(Math.floor(this.player.x - 17 / 3), 0), -(80 - 17)),
-			y: Math.max(-Math.max(Math.floor(this.player.y - 17 / 3), 0), -(38 - 17)),
+			x: Math.max(
+				-Math.max(Math.floor(this.player.x - 17 / 2.5), 0),
+				-(80 - 17)
+			),
+			y: Math.max(
+				-Math.max(Math.floor(this.player.y - 17 / 2.5), 0),
+				-(38 - 17)
+			),
 		};
 		for (let i = this.players.length - 1; i >= 0; i--) {
 			const player = this.players[i];
