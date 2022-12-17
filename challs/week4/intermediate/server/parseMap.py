@@ -1,5 +1,5 @@
 import json
-with open("test.json") as f:
+with open("map.json") as f:
     a = f.read()
 a = json.loads(a)
 layers = a["layers"][0]
