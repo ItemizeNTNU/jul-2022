@@ -27,7 +27,7 @@ export default class Player extends Tile {
 	}
 	draw(ctx, offset = { x: 0, y: 0 }) {
 		ctx.shadowBlur = 5;
-		ctx.shadowColor = "rgba(255,255,255,0.3)";
+		ctx.shadowColor = "rgba(0,0,0,0.3)";
 		if (Player.sprite.complete) {
 			ctx.beginPath();
 			ctx.drawImage(

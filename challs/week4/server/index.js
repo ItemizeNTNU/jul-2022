@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from "uuid";
 import Player from "./player.js";
 import { playerEncode, mapEncode, playersEncode } from "./utils.js";
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 const fps = 10;
 const FPS = 1000 / fps;
 const clients = {};
@@ -23,7 +23,7 @@ wss.on("connection", function (ws, req) {
 			clients[ws.id].lastTimeout = new Date();
 		}
 	});
-	// ws.close()
+
 	ws.on("close", () => {
 		console.log("closing", ws.id);
 		delete clients[ws.id];

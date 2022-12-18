@@ -23,7 +23,6 @@ export function App() {
 			}
 			if (data) {
 				socket.send(data);
-				console.log(key, data);
 			}
 		},
 		[socket]
@@ -47,7 +46,11 @@ export function App() {
 	}, [handleUserKeyPress]);
 
 	useEffect(() => {
-		const newSocket = new WebSocket("ws://localhost:8080");
+		const newSocket = new WebSocket(
+			`ws://${
+				import.meta.env.DEV ? "localhost" : import.meta.env.VITE_SERVERURL
+			}:${import.meta.env.DEV ? "3000" : import.meta.env.VITE_SERVERPORT}`
+		);
 		setSocket(newSocket);
 		return () => newSocket.close();
 	}, []);
@@ -55,7 +58,7 @@ export function App() {
 	useEffect(() => {
 		if (!socket) return;
 		socket.onopen = () => {
-			socket.send("I am the client and I'm listening!");
+			socket.send("connect");
 			socket.onmessage = (message) => {
 				// console.log("Client received a message", message.data);
 				game.update(message.data);

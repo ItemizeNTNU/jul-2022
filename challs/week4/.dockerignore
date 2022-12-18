@@ -1,0 +1,7 @@
+./client/node_modules
+./client/dist
+./client/.gitignore
+./client/.package-lock.json
+./server/node_modules
+./server/.gitignore
+./server/.package-lock.json
