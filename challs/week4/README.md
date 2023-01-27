@@ -6,7 +6,7 @@ Nå er det snart jul! Alvene har utviklet seg et online spill hvor man sammen ka
 Spillet er fortsatt under utvikling og alvene gjør sitt beste på å fullføre spillet til julaften. Heldigvis, har alvene vært så snille og gitt oss en demo versjon av spillet så vi får prøvet ut spillet først. Det har blitt sagt at alvene har gjemt en overraskelse et sted over elven i spillet, se om du klarer å finne det.
 
 Prøv ut spillet her:
-https://christmasrpg.ctf.itemize.no/
+http://129.241.150.119:34008/
 
 ### Category
 
